@@ -21,9 +21,14 @@
 
 var argscheck = require('cordova/argscheck'),
     exec = require('cordova/exec'),
-    ExifPlugin = require('./ExifPlugin');
+    Exif = require('./Exif');
 
 var exifExport = {};
+
+// Tack on the Camera Constants to the base camera plugin.
+for (var key in Exif) {
+    exifExport[key] = Exif[key];
+}
 
 /**
  * Set location in JPEG Exif.
@@ -33,7 +38,7 @@ var exifExport = {};
  * @param {Object} options
  */
 exifExport.setLocation = function(successCallback, errorCallback, options) {
-    argscheck.checkArgs('fFO', 'ExifPlugin.setLocation', arguments);
+    argscheck.checkArgs('fFO', 'Exif.setLocation', arguments);
     options = options || {};
     var getValue = argscheck.getValue;
 
@@ -43,7 +48,7 @@ exifExport.setLocation = function(successCallback, errorCallback, options) {
 
     var args = [fileName, latitude, longitude];
 
-    exec(successCallback, errorCallback, "Exit", "setlocation", args);
+    exec(successCallback, errorCallback, "Exif", "setlocation", args);
 };
 
 module.exports = exifExport;
