@@ -1,4 +1,4 @@
-package org.apache.cordova.plugin;
+package org.apache.cordova.exif;
 
 import android.content.Context;
 
