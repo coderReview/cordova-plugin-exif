@@ -26,4 +26,8 @@
 
         <source-file src="src/android/org/apache/cordova/plugin/Exif.java" target-dir="src/org/apache/cordova/plugin" />
     </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+    </platform>
 </plugin>
