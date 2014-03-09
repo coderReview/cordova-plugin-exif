@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     id="org.apache.cordova.plugin.Exif"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-    version="1.0.0">
-
+    version="0.1.0">
     <name>ExifPlugin</name>
+    <description>Exif Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,exif</keywords>
+    <repo>https://github.com/coderReview/cordova-plugin-exif.git</repo>
 
-  <description>
-    Exif Plugin for Steroids.js
-  </description>
+    <js-module src="www/ExifPlugin.js" name="Exif">
+        <clobbers target="navigator.exif" />
+    </js-module>
 
-  <asset src="www/ExifPlugin.js" target="plugins/ExifPlugin.js" />
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Exif">
+                <param name="android-package" value="org.apache.cordova.plugin.Exif""/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
 
-  <engines>
-    <engine name="cordova" version=">=2.7.0" />
-  </engines>
-
-  <!-- android -->
-  <platform name="android">
-    <config-file target="res/xml/config.xml" parent="plugins">
-      <plugin name="Exif" value="org.apache.cordova.plugin.Exif"/>
-    </config-file>
-
-    <source-file src="src/android/org/apache/cordova/plugin/Exif.java"
-      target-dir="src/org/apache/cordova/plugin" />
-  </platform>
-
+        <source-file src="src/android/org/apache/cordova/plugin/Exif.java" target-dir="src/org/apache/cordova/plugin" />
+    </platform>
 </plugin>
