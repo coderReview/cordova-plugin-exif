@@ -21,14 +21,8 @@
 
 var argscheck = require('cordova/argscheck'),
     exec = require('cordova/exec'),
-    Exif = require('./Exif');
 
 var exifExport = {};
-
-// Tack on the Camera Constants to the base camera plugin.
-for (var key in Exif) {
-    exifExport[key] = Exif[key];
-}
 
 /**
  * Set location in JPEG Exif.

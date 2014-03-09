@@ -9,7 +9,7 @@
     <keywords>cordova,exif</keywords>
     <repo>https://github.com/coderReview/cordova-plugin-exif.git</repo>
 
-    <js-module src="www/Exif.js" name="exif">
+    <js-module src="www/Exif.js" name="Exif">
         <clobbers target="navigator.exif" />
     </js-module>
 
