@@ -20,7 +20,7 @@
 */
 
 var argscheck = require('cordova/argscheck'),
-    exec = require('cordova/exec'),
+    exec = require('cordova/exec');
 
 var exifExport = {};
 
