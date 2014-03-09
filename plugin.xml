@@ -29,5 +29,10 @@
 
     <!-- ios -->
     <platform name="ios">
+         <config-file target="config.xml" parent="/*">
+             <feature name="Exif">
+                 <param name="ios-package" value="CDVExif" />
+             </feature>
+         </config-file>
     </platform>
 </plugin>
